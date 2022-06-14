@@ -1,0 +1,3833 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SMB3 2022 Tournament - suggestions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            src: url(SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/whitney-300-1FE35.woff);
+            font-family: Whitney;
+            font-weight: 300;
+        }
+
+        @font-face {
+            src: url(SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/whitney-400-83E7B.woff);
+            font-family: Whitney;
+            font-weight: 400;
+        }
+
+        @font-face {
+            src: url(SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/whitney-500-47E37.woff);
+            font-family: Whitney;
+            font-weight: 500;
+        }
+
+        @font-face {
+            src: url(SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/whitney-600-9EC09.woff);
+            font-family: Whitney;
+            font-weight: 600;
+        }
+
+        @font-face {
+            src: url(SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/whitney-700-A7A71.woff);
+            font-family: Whitney;
+            font-weight: 700;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+            image-rendering: high-quality;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .preamble {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            max-width: 100%;
+            padding: 1rem;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 1rem;
+        }
+
+        .preamble__entry {
+            margin-bottom: 0.15rem;
+            color: #ffffff;
+            font-size: 1.4rem;
+        }
+
+        .preamble__entry--small {
+            font-size: 1rem;
+        }
+
+        .chatlog {
+            padding: 1rem 0;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chatlog__message-group {
+            margin-bottom: 1rem;
+        }
+
+        .chatlog__message-container {
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message-container--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message-container--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__message {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            padding: 0.15rem 0;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+        }
+
+        .chatlog__message:hover {
+            background-color: #32353b;
+        }
+
+        .chatlog__message:hover .chatlog__short-timestamp {
+            display: block;
+        }
+
+        .chatlog__message-aside {
+            grid-column: 1;
+            width: 72px;
+            padding: 0.15rem 0.15rem 0 0.15rem;
+            text-align: center;
+        }
+
+        .chatlog__reference-symbol {
+            height: 10px;
+            margin: 6px 4px 4px 36px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .chatlog__short-timestamp {
+            display: none;
+            color: #a3a6aa;
+            font-size: 0.75rem;
+            font-weight: 500;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+        }
+
+        .chatlog__message-primary {
+            grid-column: 2;
+            min-width: 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            margin-bottom: 0.15rem;
+            align-items: center;
+            color: #b5b6b8;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-avatar {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25rem;
+            border-radius: 50%;
+        }
+
+        .chatlog__reference-author {
+            margin-right: 0.3rem;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link .hljs {
+            display: inline;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.chatlog__markdown-spoiler) {
+            color: inherit;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25rem;
+            color: #a3a6aa;
+            font-size: 0.75rem;
+            font-weight: 500;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+        }
+
+        .chatlog__header {
+            margin-bottom: 0.1rem;
+        }
+
+        .chatlog__author {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__bot-label {
+            position: relative;
+            top: -0.1rem;
+            margin-left: 0.3rem;
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625rem;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3rem;
+            color: #a3a6aa;
+            font-size: 0.75rem;
+            font-weight: 500;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+        }
+
+        .chatlog__content {
+            padding-right: 1rem;
+            font-size: 0.95rem;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15rem;
+            color: #a3a6aa;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .chatlog__attachment {
+            position: relative;
+            width: fit-content;
+            margin-top: 0.3rem;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 999;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #dcddde;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            max-width: 45vw;
+            max-height: 500px;
+            vertical-align: top;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            max-width: 520px;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            background-color: #2f3136;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3rem;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25rem;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 0.6rem;
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background-color: rgba(46, 48, 54, 0.3);
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author-container {
+            display: flex;
+            margin-bottom: 0.5rem;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author {
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+        }
+
+        .chatlog__embed-author-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .chatlog__embed-description {
+            color: #dcddde;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5rem;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6rem;
+            font-size: 0.875rem;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 50px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .chatlog__embed-field-value {
+            color: #dcddde;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            max-width: 80px;
+            max-height: 80px;
+            margin-left: 1.2rem;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6rem;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6rem;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.2rem;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            max-width: 45vw;
+            max-height: 500px;
+            vertical-align: top;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6rem;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__sticker {
+            width: 180px;
+            height: 180px;
+        }
+
+        .chatlog__sticker--media {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            margin: 0.35rem 0.1rem 0.1rem 0;
+            padding: 0.125rem 0.375rem;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            background-color: #2f3136;
+            align-items: center;
+        }
+
+        .chatlog__reaction:hover {
+            border: 1px solid hsla(0,0%,100%,.2);
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35rem;
+            color: #b9bbbe;
+            font-size: 0.875rem;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .chatlog__markdown-preserve {
+            white-space: pre-wrap;
+        }
+
+        .chatlog__markdown-spoiler {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .chatlog__markdown-spoiler--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .chatlog__markdown-spoiler--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .chatlog__markdown-spoiler--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .chatlog__markdown-quote {
+            display: flex;
+            margin: 0.05rem 0;
+        }
+
+        .chatlog__markdown-quote-border {
+            margin-right: 0.5rem;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .chatlog__markdown-pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .chatlog__markdown-pre--multiline {
+            margin-top: 0.25rem;
+            padding: 0.5rem;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .chatlog__markdown-pre--multiline.hljs {
+            background-color: inherit;
+            color: inherit;
+        }
+
+        .chatlog__markdown-pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+        }
+
+        .chatlog__markdown-mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(88, 101, 242, .3);
+            color: #dee0fc;
+            font-weight: 500;
+        }
+
+        .chatlog__markdown-mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .chatlog__markdown-timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #a3a6aa;
+        }
+
+        .chatlog__emoji {
+            width: 1.325rem;
+            height: 1.325rem;
+            margin: 0 0.06rem;
+            vertical-align: -0.4rem;
+        }
+
+        .chatlog__emoji--small {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .chatlog__emoji--large {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+
+        .postamble {
+            padding: 1.25rem;
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/solarized-dark.min-BA98F.css">
+    <script src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/highlight.min-D8D27.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.chatlog__markdown-pre--multiline').forEach(e => hljs.highlightBlock(e));
+        });
+    </script>
+
+    <script src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/lottie.min-99657.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.chatlog__sticker--media[data-source]').forEach(e => {
+                const imageDataUrl = e.getAttribute('data-source');
+
+                const anim = lottie.loadAnimation({
+                  container: e,
+                  renderer: 'svg',
+                  loop: true,
+                  autoplay: true,
+                  path: imageDataUrl
+                });
+
+                anim.addEventListener('data_failed', () =>
+                    e.innerHTML = '<strong>[Sticker cannot be rendered]</strong>'
+                );
+            });
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('chatlog__message-container-' + id);
+            if (!element)
+                return;
+
+            event.preventDefault();
+            element.classList.add('chatlog__message-container--highlighted');
+
+            window.scrollTo({
+                top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                behavior: 'smooth'
+            });
+
+            window.setTimeout(function() {
+                element.classList.remove('chatlog__message-container--highlighted');
+            }, 2000);
+        }
+
+        function showSpoiler(event, element) {
+            if (!element)
+                return;
+
+            if (element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+
+            if (element.classList.contains('chatlog__markdown-spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__markdown-spoiler--hidden');
+            }
+        }
+    </script>
+
+    <svg style="display: none">
+        <symbol id="attachment-icon" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z"/>
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z"/>
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z"/>
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z"/>
+        </symbol>
+    </svg>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6eac7f719d78a058b15ba370febed58f-446C0.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">SMB3 2022 Tournament</div>
+        <div class="preamble__entry">Channels / suggestions</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-921823575512600586" class="chatlog__message-container " data-message-id="921823575512600586">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">18-Dec-21 12:57 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">* prize pool - for simplification, no prize pool this time. interesting motivation factors. any more thoughts on this? a subsequent tourny can have some prizes <img loading="lazy" class="chatlog__emoji " alt="🤷" title="person_shrugging" src="https://twemoji.maxcdn.com/2/svg/1f937.svg"></span>
+
+                            <span class="chatlog__edited-timestamp" title="17-Jan-22 05:15 PM">(edited)</span>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933786484434165830" class="chatlog__message-container " data-message-id="933786484434165830">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/fc7624ad976a3fd8fd24dd8fff334711-4E04E.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Rhakor#4640" data-user-id="373499009324679169">Rhakor</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 01:14 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Honor</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="100">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128175;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f4af-2188D.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933800902345756742" class="chatlog__message-container " data-message-id="933800902345756742">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2e6b9f14c1d781d40093bebaf9be531f-C86D8.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="dom#1418" data-user-id="207933671259242496">dom</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:11 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Rhakor dips a burger in shake as a prize</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="peteReady">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="peteReady" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/908071851299840001-4AA3E.gif" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933801823440109669" class="chatlog__message-container " data-message-id="933801823440109669">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/fc7624ad976a3fd8fd24dd8fff334711-4E04E.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Rhakor#4640" data-user-id="373499009324679169">Rhakor</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:15 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">when you win, I do it</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933801913206571018" class="chatlog__message-container " data-message-id="933801913206571018">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/82709de365b9f5fd1180586524269769-53879.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Scarface#4869" data-user-id="254646304058245121">Scarface</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:15 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">rhakor pls you know dom won&#39;t win</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933802030957486110" class="chatlog__message-container " data-message-id="933802030957486110">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/fc7624ad976a3fd8fd24dd8fff334711-4E04E.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Rhakor#4640" data-user-id="373499009324679169">Rhakor</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:15 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I do it for the person who wins if the person wants it <img loading="lazy" class="chatlog__emoji " alt="korvYes" title="korvYes" src="https://cdn.discordapp.com/emojis/785551649510522890.png"></span>
+
+                            <span class="chatlog__edited-timestamp" title="20-Jan-22 02:15 PM">(edited)</span>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933802199543341119" class="chatlog__message-container " data-message-id="933802199543341119">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2e6b9f14c1d781d40093bebaf9be531f-C86D8.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="dom#1418" data-user-id="207933671259242496">dom</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:16 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Loser talk right there nico</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-933802221265616926" class="chatlog__message-container " data-message-id="933802221265616926">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="20-Jan-22 02:16 PM">14:16</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I won’t win but I’ll beat you at least</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-933802249187127396" class="chatlog__message-container " data-message-id="933802249187127396">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="20-Jan-22 02:16 PM">14:16</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji chatlog__emoji--large" alt="Spa" title="Spa" src="https://cdn.discordapp.com/emojis/909083570826514442.png"></span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="aliceh5LASERBEAM">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="aliceh5LASERBEAM" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/922954601693577216-12651.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933803601590112306" class="chatlog__message-container " data-message-id="933803601590112306">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/82709de365b9f5fd1180586524269769-53879.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Scarface#4869" data-user-id="254646304058245121">Scarface</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:22 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">just like in the points tourney? oh wait</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933804886787760138" class="chatlog__message-container " data-message-id="933804886787760138">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2e6b9f14c1d781d40093bebaf9be531f-C86D8.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="dom#1418" data-user-id="207933671259242496">dom</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:27 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji chatlog__emoji--large" alt="stache" title="stache" src="https://cdn.discordapp.com/emojis/804391064998772747.png"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933808294072557669" class="chatlog__message-container " data-message-id="933808294072557669">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/cb42b896b88291383fa84180e12df6f8-6B886.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Yatokami9#5842" data-user-id="565568059109277727">Yatokami9</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:40 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">nico the tourney whistler</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-933811341758717972" class="chatlog__message-container " data-message-id="933811341758717972">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">20-Jan-22 02:52 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji chatlog__emoji--large" alt="FireFlowerMarioLookingOutHisWind" title="FireFlowerMarioLookingOutHisWind" src="https://cdn.discordapp.com/emojis/415081256267677696.png"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-934183454466269214" class="chatlog__message-container " data-message-id="934183454466269214">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">21-Jan-22 03:31 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><s>quickdeaths / infinite lives patches?</s> <span class="chatlog__markdown-mention">#future-tournament-rom-chat</span></span>
+
+                            <span class="chatlog__edited-timestamp" title="21-Jan-22 08:27 PM">(edited)</span>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-934188581738668113" class="chatlog__message-container " data-message-id="934188581738668113">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2e6b9f14c1d781d40093bebaf9be531f-C86D8.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="dom#1418" data-user-id="207933671259242496">dom</span>
+
+
+                        <span class="chatlog__timestamp">21-Jan-22 03:51 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Game overs exciting I think</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-934895951028551690" class="chatlog__message-container " data-message-id="934895951028551690">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7ebc6359a9f679b8adbf6d73fc1d5720-8462B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Sharchid#1429" data-user-id="368579387370635267">Sharchid</span>
+
+
+                        <span class="chatlog__timestamp">23-Jan-22 02:42 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Stewie &amp; Teex need to meet IRL if one of them reaches to Semifinals <img loading="lazy" class="chatlog__emoji " alt="sharchUwU" title="sharchUwU" src="https://cdn.discordapp.com/emojis/924992685050298478.png"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-934898630719066213" class="chatlog__message-container " data-message-id="934898630719066213">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">23-Jan-22 02:53 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">:) they are pretty close to each other anyways? i beliueve!</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948718063228952597" class="chatlog__message-container " data-message-id="948718063228952597">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 06:06 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">just an idea by the off chance this happens again...........................</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-948718167423873084" class="chatlog__message-container " data-message-id="948718167423873084">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="02-Mar-22 06:07 PM">18:07</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">should we have a rule in place in case the koopa kid softlock happens? i know the odds are very low but still................................</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="guraStare">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="guraStare" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/846932681568944149-14639.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948728816363245589" class="chatlog__message-container " data-message-id="948728816363245589">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/f798378d4419912d21edc2b7a04899f2-1EEDA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="malachibros#5394" data-user-id="934288515678761050">malachibros</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 06:49 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Was that from mitchs video</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="rofl">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#129315;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f923-1D049.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-948728965462360094" class="chatlog__message-container " data-message-id="948728965462360094">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="02-Mar-22 06:50 PM">18:50</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I guess if it was a rule up coming we just have a re match</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948743014933725264" class="chatlog__message-container " data-message-id="948743014933725264">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2e6b9f14c1d781d40093bebaf9be531f-C86D8.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="dom#1418" data-user-id="207933671259242496">dom</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 07:46 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">What if we just warp to the next world on a fresh run if that happens?</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948749667628384267" class="chatlog__message-container " data-message-id="948749667628384267">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 08:12 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">the only problem with that jon is the inventory is gone completely. no items or anything</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-948749853951938570" class="chatlog__message-container " data-message-id="948749853951938570">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="02-Mar-22 08:13 PM">20:13</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">btw malachi that was me it happened to. and i was winning that race up until that point</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948749945782018120" class="chatlog__message-container " data-message-id="948749945782018120">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 08:13 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">ah yes... I think I did comms for that match. that was a thing.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948755502974795907" class="chatlog__message-container " data-message-id="948755502974795907">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/ee2239bcca5d9971332c672cd5545b5b-D1DEA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="TEEX#7361" data-user-id="110910323250241536">TEEX</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 08:35 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">If it happens to my opponent, I agree to a rematch, even if it has to get rescheduled due to SG schedule conflicts. I would hate to win because of that of all things. Hell, I don&#39;t even mind if it&#39;s not restreamed and a volunteer just comes to monitor the outcome.
+
+But of course, that&#39;s up to Narfman.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948760202071638067" class="chatlog__message-container " data-message-id="948760202071638067">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 08:54 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">the main thing i remember being pissed off about from that race was people in chat were like &quot;oh he should have to warp back to w4 since he technically didnt complete the world&quot;</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="sob">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128557;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f62d-E0373.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948761705851285514" class="chatlog__message-container " data-message-id="948761705851285514">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">02-Mar-22 09:00 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">I don&#39;t even mind if it&#39;s not restreamed
+</div></div>i think thats fine. i defer to the runners in the moment but as far as admin/SG, a softlock like that is kinda a wash for viewers and sport anyways.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-948762733703208980" class="chatlog__message-container " data-message-id="948762733703208980">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="02-Mar-22 09:04 PM">21:04</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">at some level it&#39;ll need to be streamed - semifinals and on? but earlier on sure, runners can be empowered to make the decision.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-948763834376679424" class="chatlog__message-container " data-message-id="948763834376679424">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="02-Mar-22 09:08 PM">21:08</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">people in chat
+</div></div>this tournament is for and about the runners. however the runners want to settle it is fine. maybe via a private channel if chat could be at all bothersome.
+in other news, please dont softlock</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-948764194294104114" class="chatlog__message-container " data-message-id="948764194294104114">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="02-Mar-22 09:10 PM">21:10</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">i will audibly cry if chat somehow influences a runner or the run. i dont have specific advice but just know i am on <em>your</em> team and not theirs</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948837659093114900" class="chatlog__message-container " data-message-id="948837659093114900">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/82709de365b9f5fd1180586524269769-53879.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Stewie_Cartman#8732">Stewie_Cartman</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948760202071638067&#39;)">
+the main thing i remember being pissed off about from that race was people in chat were like &quot;oh he should have to warp back to w4 since he technically didnt complete the world&quot;                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Scarface#4869" data-user-id="254646304058245121">Scarface</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:02 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">People in chat are idiots lol</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948900185612890132" class="chatlog__message-container " data-message-id="948900185612890132">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/5f80d7ac63c301b1e2aeb448de0744c9-B2FE9.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Stewie_Cartman#8732">Stewie_Cartman</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948718167423873084&#39;)">
+should we have a rule in place in case the koopa kid softlock happens? i know the odds are very low but still................................                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Tannhausx#0877" data-user-id="713842516377468988">Tannhausx</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 06:10 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">There is any video about this? I don’t know what means koopa kid softlock</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948903255017127976" class="chatlog__message-container " data-message-id="948903255017127976">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/82709de365b9f5fd1180586524269769-53879.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Scarface#4869" data-user-id="254646304058245121">Scarface</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 06:22 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Someone probably has a video of it, but what happens is that if you hit (kill?) a koopaling on the frame it lifts its wand, it just falls off screen and the timer stops without the wand ever coming down</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128077;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948904205274451978" class="chatlog__message-container " data-message-id="948904205274451978">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/5f80d7ac63c301b1e2aeb448de0744c9-B2FE9.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Tannhausx#0877" data-user-id="713842516377468988">Tannhausx</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 06:26 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Got it. Ty Nico</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948905755669565490" class="chatlog__message-container " data-message-id="948905755669565490">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/5f80d7ac63c301b1e2aeb448de0744c9-B2FE9.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Tannhausx#0877">Tannhausx</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948904205274451978&#39;)">
+Got it. Ty Nico                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 06:32 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><a href="https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger">https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger</a></span>
+
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger">
+                                                        <div class="chatlog__markdown chatlog__markdown-preserve">SpeedGaming - Whut just happened?</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="chatlog__markdown chatlog__markdown-preserve">Watch SpeedGaming&#39;s clip titled &quot;Whut just happened?&quot;</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/29905496880-offset-1984-social-preview-E2900.jpg">
+                                                <img class="chatlog__embed-thumbnail" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/29905496880-offset-1984-social-preview-E2900.jpg" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="sob">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128557;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f62d-E0373.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948916954679377920" class="chatlog__message-container " data-message-id="948916954679377920">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/5f80d7ac63c301b1e2aeb448de0744c9-B2FE9.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Stewie_Cartman#8732">Stewie_Cartman</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948905755669565490&#39;)">
+<a href="https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger">https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger</a>                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Tannhausx#0877" data-user-id="713842516377468988">Tannhausx</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 07:17 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">What happened then Stewie? was there a rematch?</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-948921707282976778" class="chatlog__message-container " data-message-id="948921707282976778">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/5f80d7ac63c301b1e2aeb448de0744c9-B2FE9.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Tannhausx#0877">Tannhausx</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948916954679377920&#39;)">
+What happened then Stewie? was there a rematch?                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 07:36 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">nope. i got the L and was eliminated</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="disappointed">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128542;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f61e-26DC3.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949005784551923732" class="chatlog__message-container " data-message-id="949005784551923732">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 01:10 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">minor note, if whistle/softlock does happen, the <strong>default</strong> is restart/whistle back to originating world. but i am fine with runner consensus overriding the default :)</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949009101956988998" class="chatlog__message-container " data-message-id="949009101956988998">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/82709de365b9f5fd1180586524269769-53879.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Scarface#4869" data-user-id="254646304058245121">Scarface</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 01:23 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I think restart + whistle back to originating world is fine. If you whistled you really shouldn&#39;t be allowed in be in a position to win. It&#39;s also good sportsmanship to just keep the race going in some way.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949014380798935090" class="chatlog__message-container " data-message-id="949014380798935090">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 01:44 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">the only downside with reset and warping to where they would have been is it guarantees that player loses anyway since their inventory is compromised</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="100">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128175;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f4af-2188D.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949016005219319920" class="chatlog__message-container " data-message-id="949016005219319920">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7ebc6359a9f679b8adbf6d73fc1d5720-8462B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="color: rgb(46, 204, 113)" title="narfman0#7549">narfman0</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;949005784551923732&#39;)">
+minor note, if whistle/softlock does happen, the <strong>default</strong> is restart/whistle back to originating world. but i am fine with runner consensus overriding the default :)                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Sharchid#1429" data-user-id="368579387370635267">Sharchid</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 01:50 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I can understand that if you warp, you need to do the reset &amp; everything because that&#39;s your fault of mismenuing, but softlocks are kinda rare since it&#39;s a frame perfect trick, what if we apply the Tennis principle of the &quot;double fault&quot;? Like if that happens once, runners restart the race, if it happens a second time, they gotta take the L &amp; do the reset/whistle.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949019981817987162" class="chatlog__message-container " data-message-id="949019981817987162">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:06 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I agree with Nico, a whistle is player error and completely controllable in the big view of things. controller issues can pop up but that&#39;ll be impossible to prove one way or another.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-949020627019370556" class="chatlog__message-container " data-message-id="949020627019370556">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="03-Mar-22 02:09 PM">14:09</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">the softlock seems like a tougher decision, I would absolutely be willing to start the race over against an opponent if that happened to them but I can totally see the other viewpoint</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949021400268685363" class="chatlog__message-container " data-message-id="949021400268685363">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:12 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">agree that&#39;s a good idea. maybe runners could clarify their strategy before the race? then you could be consistent in execution.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949021538844311592" class="chatlog__message-container " data-message-id="949021538844311592">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:12 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">granted i cant remember doing that softlock since that race but that doesnt mean it cant happen.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-949021674064449577" class="chatlog__message-container " data-message-id="949021674064449577">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="03-Mar-22 02:13 PM">14:13</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">ive gotten much more consistent at firekills since that race so it shouldnt happen again</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-949021702006915072" class="chatlog__message-container " data-message-id="949021702006915072">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="03-Mar-22 02:13 PM">14:13</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">in theory</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="stuck_out_tongue">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128539;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f61b-5A32F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction" title="fingers_crossed">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#129310;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f91e-802F4.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction" title="Cheemsburger">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="Cheemsburger" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/846932681408774185-25FB2.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949021857774989372" class="chatlog__message-container " data-message-id="949021857774989372">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:14 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">i believe in you <img loading="lazy" class="chatlog__emoji " alt="😂" title="joy" src="https://twemoji.maxcdn.com/2/svg/1f602.svg"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949021935428325406" class="chatlog__message-container " data-message-id="949021935428325406">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:14 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji chatlog__emoji--large" alt="FireFlowerMarioLookingOutHisWind" title="FireFlowerMarioLookingOutHisWind" src="https://cdn.discordapp.com/emojis/415081256267677696.png"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949022176797945938" class="chatlog__message-container " data-message-id="949022176797945938">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:15 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">it&#39;s a tricky thing. softlocks can be construed as an &quot;act of god&quot; whereas hitting the button for the whistle is user error. it&#39;s a tough balancing act, to be sure, and one that could go either way from match to match.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949022527810842675" class="chatlog__message-container " data-message-id="949022527810842675">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:16 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">i dont blame horsedad for just taking the W but i personally wouldnt want to win like that</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949023275470684160" class="chatlog__message-container " data-message-id="949023275470684160">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:19 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">similar question since I&#39;ve never been in a tournament like this: how is hardware failure handled? restart, forfeit, rematch later, etc?</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949023520581619752" class="chatlog__message-container " data-message-id="949023520581619752">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:20 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">for the SMB3R tourney, we&#39;ve rescheduled the match when there is total hardware failure.</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128077;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949024067632132156" class="chatlog__message-container " data-message-id="949024067632132156">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:22 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">ok thanks, I didn&#39;t know what typical protocol was <img loading="lazy" class="chatlog__emoji " alt="😁" title="grin" src="https://twemoji.maxcdn.com/2/svg/1f601.svg"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949024297186390056" class="chatlog__message-container " data-message-id="949024297186390056">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:23 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">they tend to be one-offs when they do happen. if it becomes a recurring issue on the user&#39;s end, that might be another topic for another day.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949024538807652362" class="chatlog__message-container " data-message-id="949024538807652362">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:24 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">oh yea. last year my everdrive was acting up for a bit and we had to reschedule at least one of my matches</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949025781458276393" class="chatlog__message-container " data-message-id="949025781458276393">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:29 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">for my part, I try to resist the &quot;breaks of the game&quot; argument because there are a lot of known unknowns when we&#39;re doing this and we&#39;re relying on technology that is, even at the best of times, imprecise. and in the vast majority of tournaments I&#39;ve been in, there is a general feeling of magnanimity and understanding among the competitors, which goes a long way.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949026485879062568" class="chatlog__message-container " data-message-id="949026485879062568">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 02:32 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">i added a bullet to the end of rules. +1 i trust yall to be awesome to each other :)</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949126971533721611" class="chatlog__message-container " data-message-id="949126971533721611">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6d2f13bc6926fb66b96e25bcc0ee861b-2AA6E.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Stewie_Cartman#8732">Stewie_Cartman</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948749667628384267&#39;)">
+the only problem with that jon is the inventory is gone completely. no items or anything                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="TrueHyperMario#8730" data-user-id="373822336434044928">TrueHyperMario</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 09:11 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">one of my most watched twitchclips is that frigging softlock <img loading="lazy" class="chatlog__emoji " alt="😄" title="smile" src="https://twemoji.maxcdn.com/2/svg/1f604.svg"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-949127808616136764" class="chatlog__message-container " data-message-id="949127808616136764">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="03-Mar-22 09:15 PM">21:15</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">how about...if you manage to avoid the use of warp whistle before world 5...use warp whistle right at the start of world 5 and go back  there <img loading="lazy" class="chatlog__emoji " alt="😄" title="smile" src="https://twemoji.maxcdn.com/2/svg/1f604.svg"> <img loading="lazy" class="chatlog__emoji " alt="😄" title="smile" src="https://twemoji.maxcdn.com/2/svg/1f604.svg"> <img loading="lazy" class="chatlog__emoji " alt="😄" title="smile" src="https://twemoji.maxcdn.com/2/svg/1f604.svg"></span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="Cheemsburger">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="Cheemsburger" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/846932681408774185-25FB2.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949129220800524348" class="chatlog__message-container " data-message-id="949129220800524348">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">03-Mar-22 09:20 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji chatlog__emoji--large" alt="Thonking" title="Thonking" src="https://cdn.discordapp.com/emojis/291562583629103104.png"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949348712558247947" class="chatlog__message-container " data-message-id="949348712558247947">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/e7de56fe01c181bb7119bd9e5873236e-9066B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="Stewie_Cartman#8732">Stewie_Cartman</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;948905755669565490&#39;)">
+<a href="https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger">https://clips.twitch.tv/EsteemedEphemeralBadgerTheRinger</a>                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="AdamFerrari#5026" data-user-id="364624977212735498">AdamFerrari</span>
+
+
+                        <span class="chatlog__timestamp">04-Mar-22 11:52 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">That was YOU? I saw that in MFP’s video recently … DANGIT</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-949349903786737685" class="chatlog__message-container " data-message-id="949349903786737685">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7f63dfc45a8da75d723727042e879b07-5A25B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Stewie_Cartman#8732" data-user-id="283321849142575104">Stewie_Cartman</span>
+
+
+                        <span class="chatlog__timestamp">04-Mar-22 11:57 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">yessir</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-950898306819711018" class="chatlog__message-container " data-message-id="950898306819711018">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/dd5b60310c32b054893e102d2f392170-68B8F.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Doomtap#2087" data-user-id="156789235867844608">Doomtap</span>
+
+
+                        <span class="chatlog__timestamp">08-Mar-22 06:30 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">We could have seeding # and/or pb displayed on the layout if SpeedGaming wanted it. Maybe they don&#39;t though</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953068261841444874" class="chatlog__message-container " data-message-id="953068261841444874">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 07:13 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">in double elimination, when a runner loses twice in a row, they don&#39;t do any more runs. this is a bummer to me. i&#39;m wondering how to mitigate that. any ideas? double elim seeded by pb will have good rank 1, 2, 3 rankings, but lower rankings aren&#39;t as accurate... maybe a system can also rank them accurately, too. there are different challonge formats, e.g. swiss:
+<div class="chatlog__markdown-quote"><div class="chatlog__markdown-quote-border"></div><div class="chatlog__markdown-quote-content">Swiss - give equal play time to participants, pair players with others of similar skill level, and determine a winner in far fewer rounds than you&#39;d anticipate. First half of the Participants&#39; list are paired with the second half for Round 1. In Round 2, players are paired up against competitors with a similar record until all rounds have been played. Players are ranked by score at the conclusion of the tournament, with ties broken using the Median-Buchholz system.
+</div></div>we could do swiss up to top 8ish, tiebreak, then single elim? 
+we could even single elim each resulting bracket of swiss
+props to spongeday for articulating some of that too :)</span>
+
+                            <span class="chatlog__edited-timestamp" title="14-Mar-22 07:13 PM">(edited)</span>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953068841716559892" class="chatlog__message-container " data-message-id="953068841716559892">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="14-Mar-22 07:15 PM">19:15</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">i dont know sports very well. seems like every sportsball season has roughly equal # of matches for all participants and still can confidently declare #1, #2, #3 etc. anyone know what thats called?</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953089333869568070" class="chatlog__message-container " data-message-id="953089333869568070">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/73e39aa170da87d22c6cac895dfe69cd-DD355.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="SpicyChickenSpiciBoi#3417" data-user-id="939992652454195270">SpicyChickenSpiciBoi</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 08:36 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Sounds like you are talking about a season followed by a playoff. Kind of like the NFL. The NFL almost does a round Robin, then seeds the top resulting teams onto their single elim tournament, there are some caveats in the NFL system that could be ignored (or incorporated if you wanted the elimination  playoff to have regional representation)</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953089721310003280" class="chatlog__message-container " data-message-id="953089721310003280">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="14-Mar-22 08:38 PM">20:38</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Like the best Finnish player gets an automatic seed in the bracket</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953089796346089472" class="chatlog__message-container " data-message-id="953089796346089472">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 08:38 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">the NFL&#39;s scheduling process (at least before they went to 17 games) was the most perfect thing ever. it was a pure science.</span>
+
+                            <span class="chatlog__edited-timestamp" title="14-Mar-22 08:38 PM">(edited)</span>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953091876423106631" class="chatlog__message-container " data-message-id="953091876423106631">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/5803b31675d2b7e1ec68bca22f36b15c-DE11C.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="CurtsNewBrand#3476" data-user-id="725445999837052990">CurtsNewBrand</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 08:46 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">There are also events with group stages. Something like split everyone up into groups of 5 and then everyone races everyone in their own group. Each group winner plus however many wildcards are needed to round out a bracket advance to a single elimination style event. That&#39;d be a ton of races though, so it would be difficult to restream them all</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953094603878305802" class="chatlog__message-container " data-message-id="953094603878305802">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/73e39aa170da87d22c6cac895dfe69cd-DD355.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="SpicyChickenSpiciBoi#3417" data-user-id="939992652454195270">SpicyChickenSpiciBoi</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 08:57 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Group stages do mean lots matchups. 3 per group gives 1 race per competitor in the group. Which could be managable. Not sure what the losers of thos group stages would do, since that still just has them playing 2 games before elimination</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953095004618911786" class="chatlog__message-container " data-message-id="953095004618911786">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 08:59 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">for SMB3R, we did have a set-up where we had a challenge cup where we invited (not required to play) those who did not make the bracket stages to play on with slightly modified rules. to use the sports analogy, the brackets are the NCAA Final Four tourney; the challenge cup is the NIT.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953101842718556271" class="chatlog__message-container " data-message-id="953101842718556271">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/9fac3f61ef7e07b3ec16c683c4088a01-D0059.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(46, 204, 113)" title="narfman0#7549" data-user-id="206149656000987138">narfman0</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 09:26 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji " alt="🤔" title="thinking" src="https://twemoji.maxcdn.com/2/svg/1f914.svg"> i like it i like it. thanks for the feedback so far. keep it coming.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953126515288190976" class="chatlog__message-container " data-message-id="953126515288190976">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 11:04 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">if people would be interested in a &quot;team&quot; style season, I&#39;d go for that. maybe four runners per team? but there wouldn&#39;t be any &quot;superteams&quot; - i.e. if there were 4 teams, the top 4 players could be captains and draft who they want. maybe too complicated? lol</span>
+
+                            <span class="chatlog__edited-timestamp" title="14-Mar-22 11:05 PM">(edited)</span>
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="guraStare">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="guraStare" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/846932681568944149-14639.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953127540187365426" class="chatlog__message-container " data-message-id="953127540187365426">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 11:08 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">you could always rank them by their racetime ranks. is that perfect? no. is it arbitrary? hell yes. but it works.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953127600056860672" class="chatlog__message-container " data-message-id="953127600056860672">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="14-Mar-22 11:08 PM">23:08</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">at least in the abstract.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953128126458785833" class="chatlog__message-container " data-message-id="953128126458785833">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 11:10 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">or some crazy mathematical formula that takes into account SRC ranking, racetime, etc. who doesn&#39;t love numbers? <img loading="lazy" class="chatlog__emoji " alt="😎" title="sunglasses" src="https://twemoji.maxcdn.com/2/svg/1f60e.svg"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953128339030311015" class="chatlog__message-container " data-message-id="953128339030311015">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">14-Mar-22 11:11 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">throw in a shoe size, their height... more numbers is good. <img loading="lazy" class="chatlog__emoji " alt="🙂" title="slight_smile" src="https://twemoji.maxcdn.com/2/svg/1f642.svg"></span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128077;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953216055537434645" class="chatlog__message-container " data-message-id="953216055537434645">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7ebc6359a9f679b8adbf6d73fc1d5720-8462B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="helfmyselp#9408">helfmyselp</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;953126515288190976&#39;)">
+if people would be interested in a &quot;team&quot; style season, I&#39;d go for that. maybe four runners per team? but there wouldn&#39;t be any &quot;superteams&quot; - i.e. if there were 4 teams, the top 4 players could be captains and draft who they want. maybe too complicated? lol                                    </span>
+
+                                        <span class="chatlog__reference-edited-timestamp" title="14-Mar-22 11:05 PM">(edited)</span>
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Sharchid#1429" data-user-id="368579387370635267">Sharchid</span>
+
+
+                        <span class="chatlog__timestamp">15-Mar-22 05:00 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Supporting to this idea, what about relay races?
+4 players on a team: a NWW runner, a Warpless runner, a 100% runner &amp; a Rando runner. 
+
+It could be like a 3 hour thing, yeah, but top level runners get to choose one category to run, with Rando we spice up the last part of the match &amp; reunites both vanilla &amp; Rando players.
+
+Just a 3 am idea, no biggie.</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128077;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953268590973448192" class="chatlog__message-container " data-message-id="953268590973448192">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">15-Mar-22 08:29 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I like that, too, so long as there isn&#39;t a &quot;murderer&#39;s row&quot; team in there it could make for a fun afternoon/evening</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953269422129311804" class="chatlog__message-container " data-message-id="953269422129311804">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="15-Mar-22 08:32 AM">08:32</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">you could also add additional spice by randomizing who plays which category right before the matches, too, but that might be too chaotic lol</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="guraStare">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="guraStare" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/846932681568944149-14639.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953324252055105566" class="chatlog__message-container " data-message-id="953324252055105566">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7ebc6359a9f679b8adbf6d73fc1d5720-8462B.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="color: rgb(52, 152, 219)" title="Sharchid#1429">Sharchid</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;953216055537434645&#39;)">
+Supporting to this idea, what about relay races?
+4 players on a team: a NWW runner, a Warpless runner, a 100% runner &amp; a Rando runner. 
+
+It could be like a 3 hour thing, yeah, but top level runners get to choose one category to run, with Rando we spice up the last part of the match &amp; reunites both vanilla &amp; Rando players.
+
+Just a 3 am idea, no biggie.                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">15-Mar-22 12:10 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">3 AM ideas are often enlightening ones in my experience.</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="sharchUwU">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="sharchUwU" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/924992685050298478-89FB2.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953356199913484328" class="chatlog__message-container " data-message-id="953356199913484328">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                        <div class="chatlog__reference-symbol"></div>
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                        <div class="chatlog__reference">
+                                <img class="chatlog__reference-avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+                                <div class="chatlog__reference-author" style="" title="helfmyselp#9408">helfmyselp</div>
+                                <div class="chatlog__reference-content">
+                                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;953269422129311804&#39;)">
+you could also add additional spice by randomizing who plays which category right before the matches, too, but that might be too chaotic lol                                    </span>
+
+                                </div>
+                        </div>
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">15-Mar-22 02:17 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Makes it so you have to be good at all four categories. I like that idea.</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="sharchOMG">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="sharchOMG" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/924992513738145862-82E3D.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953739390683840554" class="chatlog__message-container " data-message-id="953739390683840554">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">16-Mar-22 03:39 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">though upon reflection, a better choice would be you can&#39;t do the same thing twice in a row. makes it so you have to do more than one mode.</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="guraStare">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="guraStare" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/846932681568944149-14639.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-953766527897833552" class="chatlog__message-container " data-message-id="953766527897833552">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/ed825340c3a2b8104b07ce3def194198-18B3E.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="Spongeday#9503" data-user-id="589116496274522123">Spongeday</span>
+
+
+                        <span class="chatlog__timestamp">16-Mar-22 05:27 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">swiss would mean most people would play 7/8/9 races</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953766595321298994" class="chatlog__message-container " data-message-id="953766595321298994">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="16-Mar-22 05:27 PM">17:27</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">that would be nice</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953767067444719666" class="chatlog__message-container " data-message-id="953767067444719666">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="16-Mar-22 05:29 PM">17:29</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">or you put in place groups like the Champions League. Multiple&quot; hats&quot; like one hat with the sub 52 people, one hat with the 52 to 55 one with the 55 to 58 one with the 58 to 1h and one for the hours+ player.
+You makes groups with 1 person from each hat and then in each group everyone plays everyone yout get rankings in each group</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953767152064823296" class="chatlog__message-container " data-message-id="953767152064823296">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="16-Mar-22 05:30 PM">17:30</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">then you take like best 2 of each group and make elimination rounds</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-953767212747984937" class="chatlog__message-container " data-message-id="953767212747984937">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="16-Mar-22 05:30 PM">17:30</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">+ some of the best thirds if you need some to make 8/16 people</span>
+
+                            <span class="chatlog__edited-timestamp" title="16-Mar-22 05:30 PM">(edited)</span>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-954545320853901362" class="chatlog__message-container " data-message-id="954545320853901362">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7ebc6359a9f679b8adbf6d73fc1d5720-8462B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="Sharchid#1429" data-user-id="368579387370635267">Sharchid</span>
+
+
+                        <span class="chatlog__timestamp">18-Mar-22 09:02 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">For future &quot;Race results&quot; messages for people that might be interested in matches &amp; they couldn&#39;t get to watch them live: write them down in Spoilers format <span class="chatlog__markdown-spoiler chatlog__markdown-spoiler--hidden" onclick="showSpoiler(event, this)">like this</span></span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128077;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">5</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-954590454496776232" class="chatlog__message-container " data-message-id="954590454496776232">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/7bcbb31333277c447e6bee8a54f7cd04-B7DEC.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="TheHaxor#5645" data-user-id="263862904296701954">TheHaxor</span>
+
+
+                        <span class="chatlog__timestamp">19-Mar-22 12:01 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">wouldn&#39;t it be better to just mute the channel</span>
+
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="stache">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="stache" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/804391064998772747-6823D.png" loading="lazy">
+                                <span class="chatlog__reaction-count">6</span>
+                            </div>
+                            <div class="chatlog__reaction" title="egg">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#129370;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f95a-0EA1B.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction" title="lips">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="&#128068;" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/1f444-83D7F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-955836623843627119" class="chatlog__message-container " data-message-id="955836623843627119">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/6b86b828ed6d3a6b7089d85ceb63f537-2ADAA.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="helfmyselp#9408" data-user-id="265988963838328832">helfmyselp</span>
+
+
+                        <span class="chatlog__timestamp">22-Mar-22 10:33 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">had another idea for balance, not unlike handicaps in golf and bowling. if i have a 54:00 PB and my opponent has a 57:00, then my opponent gets a percentage of time subtracted from the end of their race based on the difference in PBs. this might only work with some sort of rng removal patch...but i dunno.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-955858897418211378" class="chatlog__message-container " data-message-id="955858897418211378">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2e6b9f14c1d781d40093bebaf9be531f-C86D8.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="dom#1418" data-user-id="207933671259242496">dom</span>
+
+
+                        <span class="chatlog__timestamp">22-Mar-22 12:02 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">I think that discourages runners with lower PBs a bit. You’d have to be careful with numbers</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="chatlog__message-container-955859151957942332" class="chatlog__message-container " data-message-id="955859151957942332">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <div class="chatlog__short-timestamp" title="22-Mar-22 12:03 PM">12:03</div>
+            </div>
+
+            <div class="chatlog__message-primary">
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">If someone throws down a 51 and then takes a year long break, they might be pushing 53 or 54 at the best for a little while</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-955859286033072269" class="chatlog__message-container " data-message-id="955859286033072269">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/2033b0f797dd90cfca3ba8bf524bf59b-157E2.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="proa007#4240" data-user-id="356079672230019073">proa007</span>
+
+
+                        <span class="chatlog__timestamp">22-Mar-22 12:03 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">in a league setting, that would be blunted somewhat, but your point&#39;s still valid.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-955866267238170665" class="chatlog__message-container " data-message-id="955866267238170665">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/98ee5f0c8b7967e37c92a0c59d103b62-98679.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="" title="EthanRTA#2804" data-user-id="120174836734492672">EthanRTA</span>
+
+
+                        <span class="chatlog__timestamp">22-Mar-22 12:31 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Like you said about the rng, I think that&#39;s the main reason why that type of system wouldn&#39;t work for warpless.</span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-955866570519871498" class="chatlog__message-container " data-message-id="955866570519871498">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/a_b19d6bf57a912fb70d195e1266bda093-98CFD.gif" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="BigChiefJahaley#5087" data-user-id="718982900422410300">BigChiefJahaley</span>
+
+
+                        <span class="chatlog__timestamp">22-Mar-22 12:32 PM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve"><img loading="lazy" class="chatlog__emoji chatlog__emoji--large" alt="ackch" title="ackch" src="https://cdn.discordapp.com/emojis/947368940185739265.png"></span>
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+    <div id="chatlog__message-container-974636560337223690" class="chatlog__message-container " data-message-id="974636560337223690">
+        <div class="chatlog__message">
+            <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/f13b31867e4e1bdf08a64f23bed128b8-ED42B.png" alt="Avatar" loading="lazy">
+            </div>
+
+            <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author" style="color: rgb(52, 152, 219)" title="MaCobra52#7113" data-user-id="211869499794653184">MaCobra52</span>
+
+
+                        <span class="chatlog__timestamp">13-May-22 07:37 AM</span>
+                    </div>
+
+                    <div class="chatlog__content chatlog__markdown">
+                        <span class="chatlog__markdown-preserve">Just noticed the discussions last week about the finals format. Here is what we did in SMB3R for SG Live 2019 as another suggestion: 
+
+Grand finals is Bo3. If the lower finalist wins then have a one game sudden death match to determine the winner. This would still benefit the upper finalist since they would only have to win 2 games where the lower would need 3 (with two Bo3s, lower would need 4)</span>
+
+                            <span class="chatlog__edited-timestamp" title="13-May-22 07:37 AM">(edited)</span>
+                    </div>
+
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="stache">
+                                <img class="chatlog__emoji chatlog__emoji--small" alt="stache" src="SMB3%202022%20Tournament%20-%20Channels%20-%20suggestions%20%5B921823423464890469%5D.html_Files/804391064998772747-6823D.png" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 99 message(s)</div>
+</div>
+
+</body>
+
+</html>
